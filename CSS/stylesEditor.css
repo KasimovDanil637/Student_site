@@ -10,7 +10,7 @@
     --border-text-area: 1px solid #BEBEBE;
 }
 html{
-    background-color: var(--color-coral);
+    background-color: var(--color-light);
 }
 body{
     margin: 0;
