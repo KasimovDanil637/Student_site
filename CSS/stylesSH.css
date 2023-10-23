@@ -1,0 +1,67 @@
+:root{
+    --color-bg: #ddefff;
+    --color-coral: #ff6f65;
+    --box-shadow: 0 3px 3px rgb(0 0 0 / 24%), 0 0 1px rgb(0 0 0 / 32%);
+    --color-coral-theme: #ff6055;
+}
+html{
+    background-color: var(--color-bg);
+}
+main{
+    background-color: var(--color-bg);
+}
+
+.navbar{
+    background-color: var(--color-coral);
+    height: 60px;
+    box-shadow: var(--box-shadow) ;
+}
+.navbar__block{
+    background-color: var(--color-coral);
+}
+.navbar__block-brand{
+    padding-left: 46%;
+    text-decoration: none;
+}
+.navbar__block-brand-name{
+    font-size: 20px;
+    color: white;
+}
+.nav-item:last-child{
+    margin-bottom: 40px;
+}
+.navbar__block-drop-items-theme-name{
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.navbar__block-theme-btn{
+    font-size: 20px;
+}
+.main__number-group{
+   padding-top: 20px;
+}
+.main__number-group-block{
+    border-radius: 15px;
+    margin: 0 auto;
+    width: 180px;
+    height: 40px;
+    text-align: center;
+    background-color: var(--color-coral);
+    box-shadow: var(--box-shadow);
+}
+.main__number-group-block-select{
+    align-items: center;
+    padding-top: 8px;
+}
+.number-group-label{
+    font-weight: 900;
+    color: white;
+}
+#number-group{
+    background-color: white;
+    border-radius: 5px;
+    border: 0;
+    outline: none;
+}
+
+

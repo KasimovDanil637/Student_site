@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HOME TASK</title>
+    <link rel="stylesheet" href="CSS/stylesHT.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="module" src="JS/HomeTasks.js"></script>
+    <script type="module" src="JS/Main.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/homeTask/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/homeTask/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/homeTask/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+<nav class="navbar navbar-dark">
+    <div class="navbar__block container-fluid">
+        <a class="navbar__block-brand" href="#">
+            <div class="navbar__block-brand-name">
+                HOME TASK
+            </div>
+        </a>
+        <button class="navbar__block-btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar__block-btn-icon navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar__block-drop offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">STUDENT SITE</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="navbar__block-drop-items offcanvas-body">
+                <ul class="navbar__block-drop-items-list navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link"  href="editor.html">EDITOR</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="homeTasks.html">HOME TASK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="schedule.html">SCHEDULE</a>
+                    </li>
+                </ul>
+                <div class="navbar__block-drop-items-theme">
+                    <h6 class="navbar__block-drop-items-theme-name ">DARK THEME</h6>
+                    <div class="navbar__block-drop-items-theme-radio">
+                        <div class="navbar__block-theme-btn  form-switch">
+                            <input class="navbar__block-theme-btn-switch form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <main class="main">
+        <section class="main__setting ">
+            <div class="main__setting-block row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+                <button type="button" class="main__setting-block-btn" id="add-btn">
+                    <img src="assets/homeTask/add-icon.png" alt="" class="main__setting-block-icon hoverCoral" >
+                </button>
+            </div>
+            <div class="main__setting-block row row-cols-1 row-cols-md-2 row-cols-lg-3 g-5">
+                <button type="button" class="main__setting-block-btn" id="save-btn">
+                    <img src="assets/homeTask/save-icon.png" alt="" class="main__setting-block-icon hoverCoral border-btn" >
+                </button>
+            </div>
+        </section>
+        <section class="main__task ">
+
+        </section>
+    </main>
+</body>
+</html>

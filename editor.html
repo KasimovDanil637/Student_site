@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EDITOR</title>
+    <link rel="stylesheet" href="CSS/stylesEditor.css">
+    <script type="module" src="JS/Editor.js"></script>
+    <script type="module" src="JS/Main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/editor/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/editor/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="navbar__block container-fluid">
+            <a class="navbar__block-brand" href="#">
+                <div class="navbar__block-brand-name">
+                    EDITOR
+                </div>
+            </a>
+            <button class="navbar__block-btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar__block-btn-icon navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar__block-drop offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">STUDENT SITE</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="navbar__block-drop-items offcanvas-body">
+                    <ul class="navbar__block-drop-items-list navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="editor.html">EDITOR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="homeTasks.html">HOME TASK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="schedule.html">SCHEDULE</a>
+                        </li>
+                    </ul>
+                    <div class="navbar__block-drop-items-theme">
+                        <h6 class="navbar__block-drop-items-theme-name ">DARK THEME</h6>
+                        <div class="navbar__block-drop-items-theme-radio">
+                            <div class="navbar__block-theme-btn  form-switch">
+                                <input class="navbar__block-theme-btn-switch form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <section class="features__block">
+            <div class="features__block-buttons">
+                <div class="btn-group">
+                    <button type="button" class="features__block-button item-hover" id="download-bnt">
+                        <img class="features__block-btn-icon btn-size-default" src="/assets/editor/download-icon.png" alt="">
+                    </button>
+                    <button type="button" class="btn-primary dropdown-toggle item-hover dropdown-toggle-split features__block-button" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                    <select class="features__block-dropdown dropdown-menu " multiple name="" id="file-format">
+                        <option value=".txt">.txt</option>
+                        <option value=".pdf">.pdf</option>
+                    </select>
+                    <button class="features__block-dropdown dropdown-menu">
+
+                    </button>
+                    <button type="button" class="features__block-button save-hover" id="save-btn">
+                        <img class="features__block-btn-icon btn-size-default" src="/assets/editor/save-icon.png" alt="">
+                    </button>
+                    <button type="button" class="features__block-button basket-hover" id="basket-btn">
+                        <img class="features__block-btn-icon btn-size-default" src="/assets/editor/basket-icon.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="features__block-fonts">
+                <div class="features__block-fonts-name block-name-default">FONT</div>
+                <div class="features__block-fonts-setting">
+                    <select name="font" id="font-select" class="features__block-fonts-setting-color-select item-hover"></select>
+                    <select class="features__block-fonts-setting-color-select item-hover" id="select-color" name="colors">
+                        <option value="#000000">black</option>
+                        <option value="#ffffff">white</option>
+                        <option value="#ff0000">red</option>
+                        <option value="#008000">green</option>
+                        <option value="#FFFF00">yellow</option>
+                        <option value="#0000FF">blue</option>
+                    </select>
+                    <input class="features__block-fonts-setting-color-input item-hover" type="color" data-bs-theme="dark">
+                    <button type="button" class="features__block-fonts-setting-btn item-hover inactive" id="boldText">
+                        <img src="assets/editor/bold-icon.png" class="features__block-fonts-setting-btn-icon" alt="">
+                    </button>
+                    <button type="button" class="features__block-fonts-setting-btn item-hover inactive" id="italicText">
+                        <img src="assets/editor/italic-icon.png" class="features__block-fonts-setting-btn-icon" alt="">
+                    </button>
+                    <button type="button" class="features__block-fonts-setting-btn item-hover inactive" id="underlineText">
+                        <img src="assets/editor/underline-icon.png" class="features__block-fonts-setting-btn-icon" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="features__block-fill">
+                <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+                    <div class="features__block-fill-block bd-white ">
+                        <input class="features__block-fill-block-input" id="bd-color" type="color">
+                    </div>
+                </div>
+                <div class="features__block-fill-block">
+                    <button class="features__block-fill-block-btn item-hover" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" >
+                        <img class="features__block-fill-icon" src="assets/editor/fill-icon.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="features__block-markup">
+                <div class="features__block-markup-name block-name-default">MARKUP</div>
+                <div class="features__block-markup-setting">
+                    <button type="button" class="features__block-markup-setting-btn item-hover inactive" id="text-left">
+                        <img src="assets/editor/text-left.png" class="features__block-markup-setting-btn-icon" alt="">
+                    </button>
+                    <button type="button" class="features__block-markup-setting-btn item-hover inactive" id="text-center">
+                        <img src="assets/editor/text-center.png" class="features__block-markup-setting-btn-icon" alt="">
+                    </button>
+                    <button type="button" class="features__block-markup-setting-btn item-hover inactive" id="text-right">
+                        <img src="assets/editor/text-right.png" class="features__block-markup-setting-btn-icon" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="features__block-format">
+                <div class="features__block-format-radio">
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label for="flexRadioDefault2">
+                        <strong>Вертикальная</strong>
+                    </label>
+                </div>
+                <div class="features__block-format-radio">
+                    <input type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label for="flexRadioDefault1">
+                        <strong>Альбомная</strong>
+                    </label>
+                </div>
+            </div>
+        </section>
+        <section class="text">
+            <div class="text__block">
+                <textarea id="text" class="text__block-textarea" autofocus></textarea>
+            </div>
+        </section>
+    </main>
+    <footer class="footer_block">
+        <div class="footer_block-count">
+        </div>
+    </footer>
+</body>
+</html>

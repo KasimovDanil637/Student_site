@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SCHEDULE</title>
+    <link rel="stylesheet" href="CSS/stylesSH.css">
+    <script type="module" src="JS/schedule/schedule.js"></script>
+    <script type="module" src="JS/Main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/schedule-index/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/schedule-index/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/schedule-index/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <nav class="navbar navbar-dark">
+        <div class="navbar__block container-fluid">
+            <a class="navbar__block-brand" href="#">
+                <div class="navbar__block-brand-name">
+                    SCHEDULE
+                </div>
+            </a>
+            <button class="navbar__block-btn navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                <span class="navbar__block-btn-icon navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar__block-drop offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">STUDENT SITE</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="navbar__block-drop-items offcanvas-body">
+                    <ul class="navbar__block-drop-items-list navbar-nav justify-content-end flex-grow-1 pe-3">
+                        <li class="nav-item">
+                            <a class="nav-link " aria-current="page" href="editor.html">EDITOR</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="homeTasks.html">HOME TASK</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="schedule.html">SCHEDULE</a>
+                        </li>
+
+                    </ul>
+                    <div class="navbar__block-drop-items-theme">
+                        <h6 class="navbar__block-drop-items-theme-name ">DARK THEME</h6>
+                        <div class="navbar__block-drop-items-theme-radio">
+                            <div class="navbar__block-theme-btn  form-switch">
+                                <input class="navbar__block-theme-btn-switch form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="main">
+        <section class="main__number-group">
+            <div class="main__number-group-block">
+                <div class="main__number-group-block-select">
+                    <label for="number-group" class="number-group-label">GROUP:</label>
+                    <select name="number-group" id="number-group"></select>
+                </div>
+            </div>
+        </section>
+<!--        <section class="main__schedule">-->
+<!--            <div id="carouselExampleControlsNoTouching" class="carousel slide" data-bs-touch="false">-->
+<!--                <div class="carousel-inner">-->
+<!--                    <div class="carousel-item active">-->
+<!--                        <div></div>-->
+<!--                    </div>-->
+<!--                    <div class="carousel-item">-->
+<!--                        <img src="assets/editor/download-icon.png" class="d-block w-100" alt="...">-->
+<!--                    </div>-->
+<!--                    <div class="carousel-item">-->
+<!--                        <img src="assets/editor/basket-icon.png" class="d-block w-100" alt="...">-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">-->
+<!--                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+<!--                    <span class="visually-hidden">Previous</span>-->
+<!--                </button>-->
+<!--                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">-->
+<!--                    <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+<!--                    <span class="visually-hidden">Next</span>-->
+<!--                </button>-->
+<!--            </div>-->
+<!--        </section>-->
+    </main>
+</body>
+</html>
+<!--d-block w-100-->
