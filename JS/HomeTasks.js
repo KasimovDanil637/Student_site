@@ -40,7 +40,7 @@ function createHeader(){
 function createDeadlineInput(){
     const deadLine = document.createElement('input')
     deadLine.classList.add('deadline-task')
-    deadLine.placeholder = 'dd.mm.yyyy'
+    deadLine.placeholder = 'DD.MM.YYYY'
     return deadLine
 }
 function createTextInput(){
@@ -81,7 +81,8 @@ function deleteTask(element) {
 }
 function checkDeadline(element) {
     const deadlineInput = element.querySelector('.deadline-task');
-    deadlineInput.addEventListener('change', () => {
+    const main = document.querySelector('main')
+    main.addEventListener('mousemove', () => {
             let localDate = deadlineInput.value
             localDate = new Date(localDate.replace(/(\d+).(\d+).(\d+)/, '$3/$2/$1'));
             const tomorrow = new Date();
@@ -98,6 +99,7 @@ function checkDeadline(element) {
     )
     return element.style.backgroundColor
 }
+
 function saveTasks() {
     const saveBtn = document.getElementById('save-btn')
     saveBtn.addEventListener('click', () => {
