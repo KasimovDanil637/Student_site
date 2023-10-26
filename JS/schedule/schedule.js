@@ -1,7 +1,9 @@
-// import {Group205} from "/JS/schedule-index/groups/group205";
+import {getLessonsByDay205} from "./groups/group205.js";
+
 schedule()
 function schedule(){
     selectGroups()
+    lessons()
 }
 
 
@@ -14,10 +16,20 @@ function selectGroups(){
         select.append(option)
     }
 }
-// function lessons(){
-//     const select = document.getElementById('number-group')
-//     select.addEventListener('change', () => {
-//         const lessons = new Group205()
-//         lessons.getLessonsByDay('monday')
-//     })
-// }
+function lessons() {
+    const select = document.getElementById('number-group')
+    const block = document.querySelectorAll('.item-block-schedule')
+    select.addEventListener('input', () => {
+        switch (select.value) {
+            case '11-205':
+                for (let i = 0; i < 7; i++) {
+                    for (let j = 0; j < 7; j++) {
+                        const schedule = document.createElement('div')
+                        schedule.classList.add('item-schedule')
+                        schedule.textContent = getLessonsByDay205(i + 1)[j]
+                        block[i].append(schedule)
+                    }
+                }
+        }
+    })
+}
