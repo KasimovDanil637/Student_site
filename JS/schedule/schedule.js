@@ -1,4 +1,4 @@
-import {getLessonsByDay205} from "./groups/group205.js";
+import {getLessonsByDay} from "./data_base_schedule/groupHandler.js";
 
 schedule()
 function schedule(){
@@ -9,7 +9,7 @@ function schedule(){
 
 function selectGroups(){
     const select = document.getElementById('number-group')
-    for (let i = 200; i < 212; i++){
+    for (let i = 200; i < 210; i++){
         const option = document.createElement('option')
         option.value = "11-" + i
         option.textContent = "11-" + i
@@ -19,17 +19,16 @@ function selectGroups(){
 function lessons() {
     const select = document.getElementById('number-group')
     const block = document.querySelectorAll('.item-block-schedule')
+    select.value = null
     select.addEventListener('input', () => {
-        switch (select.value) {
-            case '11-205':
-                for (let i = 0; i < 7; i++) {
-                    for (let j = 0; j < 7; j++) {
-                        const schedule = document.createElement('div')
-                        schedule.classList.add('item-schedule')
-                        schedule.textContent = getLessonsByDay205(i + 1)[j]
-                        block[i].append(schedule)
-                    }
-                }
+        block.forEach(item => item.innerHTML = "")
+        for (let i = 0; i < 7; i++) {
+            for (let j = 0; j < 7; j++) {
+                const schedule = document.createElement('div')
+                schedule.classList.add('item-schedule')
+                schedule.textContent = getLessonsByDay(select.value,i + 1)[j]
+                block[i].append(schedule)
+            }
         }
     })
 }

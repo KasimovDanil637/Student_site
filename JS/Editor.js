@@ -13,7 +13,6 @@ function editor(){
     bgColor()
     countWord()
     saveSession()
-    sendRequest()
 }
 function saveFile(){
     const downloadBtn = document.getElementById('download-bnt');
@@ -126,7 +125,7 @@ function setFormat(){
     })
     formatSelectVer.addEventListener('click', () => {
         textarea.style.width = 800 + "px"
-        textarea.style.height = 1202 + "px"
+        textarea.style.height = 1200 + "px"
     })
 }
 function clearText(){
@@ -172,6 +171,7 @@ function countWord(){
 function saveSession(){
     const buttonSave = document.getElementById('save-btn')
     buttonSave.addEventListener('click', ()=>{
+        sendRequest(textarea.value)
         localStorage.setItem('text', textarea.value);
         localStorage.setItem('fontStyle', textarea.style.fontStyle);
         localStorage.setItem('fontWeight', textarea.style.fontWeight);
@@ -194,14 +194,22 @@ function saveSession(){
     textarea.style.width = localStorage.getItem('textWight')
     textarea.style.height = localStorage.getItem('textHeight')
 }
-function sendRequest(){
-    const getTodos = fetch('http://localhost:63342/Project_1_JS/editor.html?_ijt=ooj4ii1p885ijr1ouoo3pq0r93', {
-        method: 'GET',
+function sendRequest(text) {
+    const getText = fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        body: JSON.stringify({
+        title: "text",
+        body: text,
+        userId: 1,
+    }),
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+    },
     })
-    getTodos
-        .then((data) => data.json())
-        .then((data) => {
-            console.log(data)
-        })
+    getText
+        .then((data) => console.log(data))
         .catch((err) => console.log(err))
+        .finally(() => {
+            alert("Сохранено")
+        })
 }

@@ -1,11 +1,8 @@
 :root {
-    --color-light: #ddefff;
-    --color-coral: #ff6f65;
     --color-theme-editor: #9dd5ff;
     --color-theme-active: #7cc5fb;
     --border-2px: 2px solid black;
     --border-1px: 1px solid black;
-    --box-shadow: 0 3px 3px rgb(0 17 51 / 24%), 0 0 1px rgb(0 17 51 / 32%);
     --color-text-area: white;
     --border-text-area: 1px solid #BEBEBE;
 }
@@ -31,6 +28,7 @@ main{
     border-top: 0;
     color: black;
 }
+
 .bd-white{
     background-color: var(--color-light);
 }
@@ -78,6 +76,10 @@ main{
 }
 .navbar__block-theme-btn{
     font-size: 20px;
+}
+.nav-bg{
+    color: white;
+    background-color: var(--color-coral);
 }
 .features__block {
     display: flex;
