@@ -23,6 +23,8 @@
 В зависимости от срока сдачи, окошко окрашивается в разные цвета, а если вы выполнили задание, то можете нажать на кнопку "complete" и окошко окрасится в синий цвет (Дата на момент публикации: 31.10.2023):
 
 <img src="assets/readme/color_task.png" alt="Image 1" style="border: 2px solid lightcoral">
+
+Не забудьте нажать кнопку "сохранить", чтобы ваши задания не исчезли!
 <hr>
 <h3 align="center">Schedule</h3><br>
 <img src="assets/readme/schedule.png" alt="Image 1" style="border: 2px solid lightcoral">
