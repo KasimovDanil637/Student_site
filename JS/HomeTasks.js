@@ -81,8 +81,7 @@ function deleteTask(element) {
 }
 function checkDeadline(element) {
     const deadlineInput = element.querySelector('.deadline-task');
-    const main = document.querySelector('.main');
-    window.addEventListener('mousemove', () => {
+    deadlineInput.addEventListener('input', () => {
             let localDate = deadlineInput.value
             localDate = new Date(localDate.replace(/(\d+).(\d+).(\d+)/, '$3/$2/$1'));
             const tomorrow = new Date();
@@ -97,8 +96,7 @@ function checkDeadline(element) {
             if (localDate.getFullYear() >= tomorrow.getFullYear() && localDate.getMonth() >= tomorrow.getMonth() && localDate.getDate() > tomorrow.getDate()) {
                 element.style.backgroundColor = '#9afb6e';
             }
-        }
-    )
+        })
     return element.style.backgroundColor
 }
 
